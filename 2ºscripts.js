@@ -20,3 +20,14 @@ let perimetro = (2*base) + (2*altura);
  console.log(altura);
  console.log(area);
  console.log(perimetro);
+
+ let nota = 59;
+ if (nota > 80){
+     console.log("Parabéns, você foi aprovada(o)!")
+ }
+ else if (nota < 60){
+    console.log("Você foi reprovada(o)")
+ }
+ else{
+ console.log("Você está na nossa lista de espera")
+ }
