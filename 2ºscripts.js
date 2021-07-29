@@ -31,3 +31,21 @@ let perimetro = (2*base) + (2*altura);
  else{
  console.log("Você está na nossa lista de espera")
  }
+
+ let status = "lista";
+ switch (status) {
+  case "aprovada":
+    console.log("Parabéns, você foi aprovada(o)!");
+    break;
+
+  case "lista":
+    console.log("Você está na nossa lista de espera");
+    break;
+
+  case "reprovada":
+    console.log("Você foi reprovada(o)");
+    break;
+
+  default:
+    console.log("Informação não encontrada");
+ }
