@@ -135,3 +135,68 @@ if (numero4 % 2 != 0 || numero5 % 2 != 0 || numero6 % 2 != 0){
 else{
     console.log("false");
 }
+
+//10 - Escreva um programa que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos. //
+let valorCusto = 10;
+let valorVenda = 15;
+let quantProdutos = 1000;
+let valorCustoComImposto = valorCusto * 1.2;
+
+if (valorCusto<=0 || valorVenda<=0){
+    console.log("Erro nos valores de entrada");
+}
+else {
+    let lucroProduto = valorVenda - valorCustoComImposto;
+    let lucroLoteProduto = lucroProduto * quantProdutos;
+    console.log(lucroLoteProduto)
+}
+
+//11 - Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.//
+let salarioBruto = 3000;
+let aliquota8 = salarioBruto * 0.08;
+let aliquota9 = salarioBruto * 0.09;
+let aliquota11 = salarioBruto * 0.11;
+let aliquotaMax = 570.88;
+let descontoInss = 0;
+
+ if (salarioBruto<1556.94){
+    descontoInss = aliquota8;
+ }
+ else if (salarioBruto>1556.94 && salarioBruto<2594.92){
+    descontoInss = aliquota9;
+ }
+ else if (salarioBruto>2594.92 && salarioBruto<5189.82){
+    descontoInss = aliquota11;
+ }
+ else{
+    descontoInss = aliquotaMax;
+ }
+
+ console.log(descontoInss)
+
+let salarioLiquidoComDescontoInssIr = 0;
+let aliquotaIrIsento = 0;
+let aliquotaIr7 = ((salarioBruto - descontoInss) * 0.075) - 142.80;
+let aliquotaIr15 = ((salarioBruto - descontoInss) * 0.15) - 354.80;
+let aliquotaIr22 = ((salarioBruto - descontoInss) * 0.225) - 636.13;
+let aliquotaIr27 = ((salarioBruto - descontoInss) * 0.275) - 869.36;
+
+ if (salarioBrutoComDescontoInss<1903.98){
+    let descontoIr = aliquotaIrIsento;
+ }
+ else if (salarioBrutoComDescontoInss>1903.98 && salarioBrutoComDescontoInss<2826.66){
+    let descontoIr = aliquotaIr7;
+ }
+ else if (salarioBrutoComDescontoInss>2826.66 && salarioBrutoComDescontoInss<3751.05){
+    let descontoIr = aliquotaIr15;
+ }
+else if (salarioBrutoComDescontoInss>3751.05 && salarioBrutoComDescontoInss<4664.68){
+   let descontoIr = aliquotaIr22;
+}
+ else{
+    let descontoIr = aliquotaIr27;
+ }
+
+ salarioLiquidoComDescontoInssIr = salarioBruto - descontoIr - descontoInss;
+ console.log(descontoIr)
+ console.log(salarioLiquidoComDescontoInssIr)
