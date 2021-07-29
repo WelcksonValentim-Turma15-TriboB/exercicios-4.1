@@ -172,31 +172,34 @@ let descontoInss = 0;
     descontoInss = aliquotaMax;
  }
 
+ let salarioBrutoComDescontoInss = salarioBruto - descontoInss;
  console.log(descontoInss)
+ console.log(salarioBrutoComDescontoInss)
 
-let salarioLiquidoComDescontoInssIr = 0;
+let descontoIr = 0;
+let salarioLiquido = 0;
 let aliquotaIrIsento = 0;
-let aliquotaIr7 = ((salarioBruto - descontoInss) * 0.075) - 142.80;
-let aliquotaIr15 = ((salarioBruto - descontoInss) * 0.15) - 354.80;
-let aliquotaIr22 = ((salarioBruto - descontoInss) * 0.225) - 636.13;
-let aliquotaIr27 = ((salarioBruto - descontoInss) * 0.275) - 869.36;
+let aliquotaIr7 = (salarioBrutoComDescontoInss * 0.075) - 142.80;
+let aliquotaIr15 = (salarioBrutoComDescontoInss * 0.15) - 354.80;
+let aliquotaIr22 = (salarioBrutoComDescontoInss * 0.225) - 636.13;
+let aliquotaIr27 = (salarioBrutoComDescontoInss * 0.275) - 869.36;
 
  if (salarioBrutoComDescontoInss<1903.98){
-    let descontoIr = aliquotaIrIsento;
+    descontoIr = aliquotaIrIsento;
  }
  else if (salarioBrutoComDescontoInss>1903.98 && salarioBrutoComDescontoInss<2826.66){
-    let descontoIr = aliquotaIr7;
+    descontoIr = aliquotaIr7;
  }
  else if (salarioBrutoComDescontoInss>2826.66 && salarioBrutoComDescontoInss<3751.05){
-    let descontoIr = aliquotaIr15;
+    descontoIr = aliquotaIr15;
  }
 else if (salarioBrutoComDescontoInss>3751.05 && salarioBrutoComDescontoInss<4664.68){
-   let descontoIr = aliquotaIr22;
+   descontoIr = aliquotaIr22;
 }
  else{
-    let descontoIr = aliquotaIr27;
+    descontoIr = aliquotaIr27;
  }
 
- salarioLiquidoComDescontoInssIr = salarioBruto - descontoIr - descontoInss;
+ salarioLiquido = salarioBrutoComDescontoInss - descontoIr;
  console.log(descontoIr)
- console.log(salarioLiquidoComDescontoInssIr)
+ console.log(salarioLiquido)
